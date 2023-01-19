@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import IconAvatar from "./components/IconAvatar/IconAvatar";
+import Form from "./components/Form/Form";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const handleCreateCard = (evt) => {
+      console.log(evt)
+    }
+
+    return (
+        <div>
+            <header>
+                <div className="App">
+                    <IconAvatar/>
+
+                </div>
+            </header>
+
+            <body>
+                <Form onCreateCard={evt => handleCreateCard(evt)}/>
+            </body>
+
+            <footer>
+
+            </footer>
+        </div>
+    );
 }
 
 export default App;
