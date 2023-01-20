@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.Card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.Card div ul {
+padding: 0;
+}

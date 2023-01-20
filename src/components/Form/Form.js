@@ -3,6 +3,7 @@ import './Form.css'
 import Button from "../Button/Button";
 import {useState} from "react";
 import InputList from "../InputList/InputList";
+import uuid from "react-uuid";
 
 function Form(props) {
     const gender = [
@@ -16,7 +17,9 @@ function Form(props) {
     const [genderValue, setGenderValue] = useState("Masculino")
 
     const handleOnSubmit = () => {
+        const key = uuid()
         props.onCreateCard({
+            key,
             nameValue,
             documentValue,
             birthValue,
