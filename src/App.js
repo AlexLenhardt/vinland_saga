@@ -18,8 +18,17 @@ function App() {
         }
     }
 
-    const removeValue = (evt) => {
-        console.log("key -->", evt)
+    const removeValue = (gender, key) => {
+        switch (gender) {
+            case "Masculino":
+                setManValue([...manValue.filter(item => item.key !== key)])
+                break;
+            case "Feminino":
+                setWomanValue([...womanValue.filter(item => item.key !== key)])
+                break;
+            default:
+                console.log("Error in object -->", key)
+        }
     }
 
     const [manValue, setManValue] = useState([])
@@ -37,7 +46,7 @@ function App() {
             <Form onCreateCard={evt => handleCreateCard(evt)}/>
             <div className="Card">
                 <ListCard name="Homens" list={manValue} onRemove={removeValue}/>
-                <ListCard name="Mulheres" list={womanValue}/>
+                <ListCard name="Mulheres" list={womanValue} onRemove={removeValue}/>
             </div>
             </body>
 
